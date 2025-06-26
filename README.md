@@ -1,10 +1,11 @@
 # 🛡️ CybersecurityWeb
 
+This website is meant to be for a cybersecurity company. It includes user authentication and a personalized page for clients.
 Sitio web fullstack para una empresa de ciberseguridad. Incluye autenticación de usuarios y una sección personalizada para clientes.
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## 🚀 Technologies
 
 ### Frontend:
 - React.js
@@ -20,19 +21,19 @@ Sitio web fullstack para una empresa de ciberseguridad. Incluye autenticación d
 
 ---
 
-## 💻 Funcionalidades
+## 💻 Functionality
 
-- Página de inicio institucional
-- Registro e inicio de sesión de usuarios
-- Página personalizada para cada cliente
-- Autenticación basada en token JWT
-- Estilizado con tonos de azul, celeste, gris y negro
+- Home Page/ Página de inicio institucional
+- User registration/ Registro e inicio de sesión de usuarios
+- Customer page/Página personalizada para cada cliente
+- Authentication JWT/ Autenticación basada en token JWT
+- Styled with blue, lightblue, grey and black/ Estilizado con tonos de azul, celeste, gris y negro
 
 ---
 
-## 🧪 Cómo correr el proyecto localmente
+## 🧪 How to run the project/ Cómo correr el proyecto localmente
 
-### 📁 Clonar el repositorio
+### 📁 Clone the repository/ Clonar el repositorio
 
 ```bash
 git clone https://github.com/mgisellemelo/CybersecurityWeb.git
@@ -54,6 +55,6 @@ npm run dev
 🧾 Autenticación
 Se utiliza JWT:
 
-Los usuarios reciben un token de acceso y refresh al iniciar sesión.
+Users get an acces token and refresh to login/ Los usuarios reciben un token de acceso y refresh al iniciar sesión.
 
-Las rutas privadas requieren el token.
+Private routes require a token / Las rutas privadas requieren el token.
