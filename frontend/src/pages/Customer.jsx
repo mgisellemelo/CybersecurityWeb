@@ -6,7 +6,7 @@ function Customer () {
     const[error, setError] = useState('');
     
     useEffect(() => {
-        const token= localStorage.getItem('acces_token'); //token saved in login
+        const token= localStorage.getItem('access_token'); //token saved in login
 
         fetch('http://localhost:8000/api/customer/', {
             headers: {

@@ -1,16 +1,46 @@
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function Register (){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //backend petition
-        console.log('Register data', {name, email, password});
+        try {
+            const response = await fetch('http://localhost:8000/api/register/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSuccess(data.message);
+                setError('');
+                setTimeout(() => navigate('/login'), 1500);
+            } else {
+                setError(data.erorr || 'Registration failed');
+                setSuccess('');
+            }
+        } catch (err) {
+            console.error(er);
+            setError('Server connection failed');
+            setSuccess('');
+        }
     };
 
     return (
@@ -18,11 +48,19 @@ function Register (){
             <h2>Register to continue</h2>
             <form onSubmit={handleSubmit}>
                 <input
-                    type="email"
+                    type="text"
                     placeholder="Name"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    required
+                
                 />
                 <input
                     type="password"
@@ -32,6 +70,8 @@ function Register (){
                     required
                 />
                 <button type="submit">Register</button>
+                {error&&<p style={{color:'red'}}>{error}</p>}
+                {success&&<p style={{color: 'green'}}>{success}</p>}
 
             </form>
         </div>
