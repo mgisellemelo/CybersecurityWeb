@@ -6,11 +6,11 @@ function Customer () {
     const[error, setError] = useState('');
     
     useEffect(() => {
-        const token= localStorage.getItem('accesToken'); //token saved in login
+        const token= localStorage.getItem('acces_token'); //token saved in login
 
         fetch('http://localhost:8000/api/customer/', {
             headers: {
-                 Authorization: 'Bearer ${token}',
+                 Authorization: `Bearer ${token}` ,
             },
     })
         
@@ -31,7 +31,7 @@ function Customer () {
     return (
         <div>
             <h1>Welcome to your landing page</h1>
-            {error ? <p style={{ color: 'red' }}>{error}</p> : <p>{message}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>} {message && <p>{message}</p>}
         </div>
     );
 }

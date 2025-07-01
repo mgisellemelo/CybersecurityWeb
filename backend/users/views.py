@@ -36,5 +36,5 @@ def login_user(request):
 def customer_page(request):
     user = request.user
     return Response({
-        'message': f'Hola {user.first_name}, esta es tu página personalizada!'
+        'message': f'Hola {request.user.username}, esta es tu página personalizada!'
         })

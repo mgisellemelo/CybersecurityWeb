@@ -20,7 +20,7 @@ function Register (){
                 <input
                     type="email"
                     placeholder="Name"
-                    value={name}
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
