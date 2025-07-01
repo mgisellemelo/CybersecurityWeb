@@ -8,16 +8,24 @@ from rest_framework.permissions import IsAuthenticated
 @api_view(['POST'])
 def register_user(request):
     data = request.data
-    if User.objects.filter(username=data['email']).exists():
-        return Response ({'error': 'User already exits'}, status = status.HTTP_400_BAD_REQUEST)
+
+    email=data.get('email')
+    password = data.get('password')
+    name = data.get('name', '')
+
+    if not email or not password:
+        return Response({'error': 'Email and password are required'}, status =status.HTTP_400_BAD_REQUEST)
     
-    user = User.objects.create_user(
-        userName=data['email'],
-        email=data['email'],
-        password=data['password'],
-        first_name=data.get('name','')
-    )
-    return Response ({'message': 'The user has been created successfully'}, status=status.HTTP_201_CREATED)
+    try:
+        user = User.objects.create_user(
+            username=email,
+            email=email,
+            password=password,
+            first_name=name,
+        )
+        return Response ({'message': 'The user has been created successfully'}, status=status.HTTP_201_CREATED)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['POST'])
 def login_user(request):
