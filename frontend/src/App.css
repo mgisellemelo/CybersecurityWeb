@@ -40,3 +40,74 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.carousel-section, .carousel {
+  width: 925px;
+  max-width: 150%;
+  height: 100%;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+}
+.carousel-track {
+  flex-wrap: nowrap;
+  animation: slide 10s infinite;
+  width: 300%;
+}
+
+.carousel .slide img {
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.dashboard-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #1e2a38;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: left;
+}
+
+.logout-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c62828;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+
+

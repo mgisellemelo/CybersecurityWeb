@@ -2,10 +2,12 @@
 node_modules/
 dist/
 .vite/
+.env
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
 env/
 venv/
 
@@ -19,3 +21,7 @@ staticfiles/
 
 # VSC
 .vscode/
+
+
+# Vite / React
+build/
