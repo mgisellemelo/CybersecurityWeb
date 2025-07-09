@@ -44,5 +44,16 @@ def login_user(request):
 def customer_page(request):
     user = request.user
     return Response({
-        'message': f'Hola {request.user.username}, esta es tu página personalizada!'
-        })
+        "message": f'Hola {request.user.username}, esta es tu página personalizada!',
+        "email": user.email,
+        "username": user.username,
+        "messages":[
+            {"title":"Welcome!", "content":"Thanks for joining CyberShield."},
+            {"title":"Security Tip", "content":"Never reuse passwords across services."},
+        ],
+        "stats": {
+            "logins": 14,
+            "alerts": 2,
+            "last_login":str(user.last_login),
+        }
+    })

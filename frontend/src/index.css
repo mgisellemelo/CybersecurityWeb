@@ -99,6 +99,7 @@ button:hover {
 }
 
 .login-page h2 {
+  margin: center;
   margin-bottom: 1.5rem;
 }
 .navbar {
@@ -122,5 +123,18 @@ button:hover {
   color: var(--light);
   font-weight: 500;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+.section {
+  padding: 65px 25px;
+  background-color:#1e2a38;
+  margin-top: 10%;
+  border-radius: 20px;
+  margin: auto;
+}
+.justify{
+  text-align: justify;
+}
 
