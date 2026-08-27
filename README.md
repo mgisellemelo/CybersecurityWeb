@@ -5,6 +5,7 @@ Sitio web fullstack para una empresa de ciberseguridad. Incluye autenticación d
 
 ---
 ![CI](https://github.com/mgisellemelo/CybersecurityWeb/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/mgisellemelo/CybersecurityWeb/actions/workflows/ci.yml/badge.svg)
 
 ## 🚀 Technologies
 
