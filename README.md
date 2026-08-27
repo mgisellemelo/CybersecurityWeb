@@ -4,6 +4,7 @@ This website is meant to be for a cybersecurity company. It includes user authen
 Sitio web fullstack para una empresa de ciberseguridad. Incluye autenticación de usuarios y una sección personalizada para clientes.
 
 ---
+![CI](https://github.com/mgisellemelo/CybersecurityWeb/actions/workflows/ci.yml/badge.svg)
 
 ## 🚀 Technologies
 
