@@ -17,7 +17,7 @@ function Customer () {
     useEffect(() => {
         const token= localStorage.getItem('access_token'); //token saved in login
 
-        fetch('http://localhost:8000/api/customer/', {
+        fetch(`${import.meta.env.VITE_API_URL}/api/customer/`, {
             headers: {
                  Authorization: `Bearer ${token}` ,
             },
