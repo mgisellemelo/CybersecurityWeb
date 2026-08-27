@@ -43,9 +43,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
+    'corsheaders',
     'users',
-    'corsheaders', 
+    'axes',  # <-- agregar esto
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',  # debe ir primero
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 ROOT_URLCONF = 'backend.urls'
 
@@ -147,4 +157,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+AXES_FAILURE_LIMIT = 5           # intentos fallidos antes de bloquear
+AXES_COOLOFF_TIME = 1            # horas de bloqueo
+AXES_LOCKOUT_PARAMETERS = [['username', 'ip_address']]  # bloquea por usuario, no solo por IP
+AXES_RESET_ON_SUCCESS = True     # resetea el contador tras login exitoso
 
