@@ -25,3 +25,10 @@ staticfiles/
 
 # Vite / React
 build/
+
+.env
+db.sqlite3
+__pycache__/
+node_modules/
+*.pyc
+env/
