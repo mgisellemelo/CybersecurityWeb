@@ -145,6 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "https://cybersecurity-web-omega.vercel.app",
+    "https://cybersecurity-web-git-main-giselles-projects-25ad7d25.vercel.app",
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers)+ [
